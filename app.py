@@ -5,7 +5,8 @@ import os
 
 #  This application will download youtube videos with the use of urls, I was inspired to make this because for so long in my country I had to download yt videos
 # due to the restrictions that Iran had with using youtube. 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
+
 app.secret_key = os.urandom(24).hex()  
 DOWNLOAD_FOLDER = 'static/downloads'
 
