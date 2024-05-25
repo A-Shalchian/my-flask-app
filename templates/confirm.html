@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Download</title>
+</head>
+<body>
+    <h1>Confirm Download</h1>
+    {% if success %}
+        <p>Downloaded: {{ video_title }}</p>
+    {% elif error %}
+        <p>Error: {{ error }}</p>
+    {% else %}
+        <form method="post" action="/confirm">
+            <input type="hidden" name="url" value="{{ url }}">
+            <p>Ready to download: {{ url }}</p>
+            <button type="submit">Download</button>
+        </form>
+    {% endif %}
+</body>
+</html>
